@@ -47,3 +47,35 @@ vim.keymap.set("x", "p", [["_dP]])
 
 -- open nvim config init.lua with :config
 vim.cmd.command("Config", ":e ~/.config/nvim/init.lua")
+
+-- Tab quick movement
+vim.keymap.set("n", "<c-left>", "gT", { desc = "Prev tab" })
+vim.keymap.set("n", "<c-right>", "gt", { desc = "Next tab" })
+
+-- Quick splits resize
+vim.keymap.set("n", "<M-left>", "<c-w>10<", { desc = "Resize 10<" })
+vim.keymap.set("n", "<M-right>", "<c-w>10>", { desc = "Resize 10>" })
+vim.keymap.set("n", "<M-up>", "<C-W>10+", { desc = "Resize 10^" })
+vim.keymap.set("n", "<M-down>", "<C-W>10-", { desc = "Resize 10v" })
+
+-- Alt-j - move line DOWN
+vim.keymap.set("n", "<M-j>", function()
+  if vim.opt.diff:get() then
+    vim.cmd [[normal! ]c]]
+  else
+    vim.cmd [[m .+1<CR>==]]
+  end
+end, { desc = "Move line down" })
+
+-- Alt-k - move line UP
+vim.keymap.set("n", "<M-k>", function()
+  if vim.opt.diff:get() then
+    vim.cmd [[normal! [c]]
+  else
+    vim.cmd [[m .-2<CR>==]]
+  end
+end, { desc = "Move line up" })
+
+vim.keymap.set("n", "<space>tt", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
+end, { desc = "Inlay hint toggle" })

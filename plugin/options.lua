@@ -59,3 +59,16 @@ vim.opt.swapfile = false -- do not use a swap file for the buffer
 vim.opt.backup = false -- do not keep a backup file
 vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir" -- set directory where undo files are stored
 vim.opt.undofile = true -- save undo history to a file
+
+-- wrap & break lines(:h lbr) at spaces instead of mid-word
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
+-- reserve 1 char for signcolumn(:h scl)
+vim.opt.signcolumn = "yes"
+
+-- more reasonable shada options. not important
+vim.opt.shada = { "'10", "<0", "s10", "h" }
+
+-- Don't have `o` add a comment
+vim.opt.formatoptions:remove "o"
