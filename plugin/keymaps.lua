@@ -45,9 +45,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 -- Paste in visual mode without yanking replaced text
 vim.keymap.set("x", "p", [["_dP]])
 
--- open nvim config init.lua with :config
-vim.cmd.command("Config", ":e ~/.config/nvim/init.lua")
-
 -- Tab quick movement
 vim.keymap.set("n", "<c-left>", "gT", { desc = "Prev tab" })
 vim.keymap.set("n", "<c-right>", "gt", { desc = "Next tab" })
@@ -79,3 +76,10 @@ end, { desc = "Move line up" })
 vim.keymap.set("n", "<space>tt", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
 end, { desc = "Inlay hint toggle" })
+
+-- Exit insert mode without hitting Esc
+vim.keymap.set("i", "jj", "<Esc>", { desc = "Esc" })
+
+-- Make Y behave like C or D
+vim.keymap.set("n", "Y", "y$")
+
