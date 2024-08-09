@@ -14,4 +14,7 @@ return { -- You can easily change to a different colorscheme.
     -- You can configure highlights by doing something like:
     vim.cmd.hi 'Comment gui=none'
   end,
+  opts = {
+    style = 'night',
+  }
 }
