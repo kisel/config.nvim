@@ -25,7 +25,7 @@ require("tokyonight").setup({
     -- DiffviewPrimary xxx guifg=#7aa2f7
     colors.diff.add = "#10203b"
     colors.diff.change = "#0f1221"
-    colors.diff.delete = "#37222c"
+    colors.diff.delete = "#17020c"
     colors.diff.text = "#394b70"
   end,
 
