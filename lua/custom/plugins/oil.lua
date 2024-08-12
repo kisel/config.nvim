@@ -18,7 +18,7 @@ return {
         },
         -- https://github.com/stevearc/oil.nvim/issues/155
         -- This disables netrw, but I can live without it
-        default_file_explorer = true,
+        default_file_explorer = false,
         --
         -- don't ask if no deletes, few copy/move
         -- skip_confirm_for_simple_edits = true,
