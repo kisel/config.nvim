@@ -10,3 +10,9 @@ vim.api.nvim_create_user_command("NG", ":Neogit", {desc = ":Neogit alias"})
 -- vim.cmd.command("Config", ":e ~/.config/nvim/init.lua")
 
 
+-- netrw-like aliases
+vim.api.nvim_create_user_command("Explore", "Oil <args>", { nargs = "?", complete = "dir" })
+vim.api.nvim_create_user_command("E", "Oil <args>", { nargs = "?", complete = "dir" })
+vim.api.nvim_create_user_command("Se", "belowright split | Oil <args>", { nargs = "?", complete = "dir" })
+vim.api.nvim_create_user_command("Ve", "rightbelow vsplit | Oil <args>", { nargs = "?", complete = "dir" })
+vim.api.nvim_create_user_command("Te", "tabedit % | Oil <args>", { nargs = "?", complete = "dir" })

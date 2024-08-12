@@ -17,7 +17,11 @@ return {
           show_hidden = true,
         },
         -- https://github.com/stevearc/oil.nvim/issues/155
-        default_file_explorer = false
+        -- This disables netrw, but I can live without it
+        default_file_explorer = true,
+        --
+        -- don't ask if no deletes, few copy/move
+        -- skip_confirm_for_simple_edits = true,
       }
       -- Open parent directory in current window
       vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
