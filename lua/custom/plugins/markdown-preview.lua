@@ -8,4 +8,7 @@ return {
   -- build = function()
   --   vim.fn["mkdp#util#install"]()
   -- end,
+
+  -- to reinstall manually from vim
+  --:call mkdp#util#install()
 }

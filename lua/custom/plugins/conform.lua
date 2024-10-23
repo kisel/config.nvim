@@ -1,11 +1,13 @@
 -- https://github.com/stevearc/conform.nvim
+-- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#lazy-loading-with-lazynvim
 return { -- Autoformat
   "stevearc/conform.nvim",
   lazy = true,
   -- ft = { "lua" },
+  cmd = { "ConformInfo" },
   keys = {
     {
-      "==",
+      "<leader>=",
       function()
         require("conform").format { async = true, lsp_fallback = true }
       end,

@@ -53,7 +53,7 @@ vim.opt.scrolloff = 3 -- Minimal number of screen lines to keep above and below 
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 
 vim.opt.swapfile = false -- do not use a swap file for the buffer
 vim.opt.backup = false -- do not keep a backup file
