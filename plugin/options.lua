@@ -60,6 +60,7 @@ vim.opt.backup = false -- do not keep a backup file
 
 if vim.fn.has('windows') then
     vim.opt.undodir = os.getenv "USERPROFILE" .. "/vimfiles/undodir" -- set directory where undo files are stored
+    vim.opt.shellslash = true -- always use forward slash on Windows
 else
     vim.opt.undodir = os.getenv "HOME" .. "/.vim/undodir" -- set directory where undo files are stored
 end
