@@ -79,9 +79,6 @@ vim.keymap.set("n", "<space>tt", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = 0 }, { bufnr = 0 })
 end, { desc = "Inlay hint toggle" })
 
--- Exit insert mode without hitting Esc
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Esc" })
-
 -- Make Y behave like C or D
 vim.keymap.set("n", "Y", "y$")
 
