@@ -2,6 +2,11 @@
 --
 local data = assert(vim.fn.stdpath "data") --[[@as string]]
 
+-- simple joinpath for nvim <= 0.9.x, with no vim.fn.joinpath
+local function joinpath(a, b) 
+    return a .. '/' .. b
+end
+
 require("telescope").setup {
   defaults = {
     layout_config = {
@@ -17,7 +22,7 @@ require("telescope").setup {
 
     fzf = {},
     history = {
-      path = vim.fs.joinpath(data, "telescope_history.sqlite3"),
+      path = joinpath(data, "/telescope_history.sqlite3"),
       limit = 100,
     },
     ["ui-select"] = {
@@ -85,12 +90,12 @@ end, { desc = "[F]ind [N]eovim Config" })
 
 vim.keymap.set("n", "<leader>fp", function()
   ---@diagnostic disable-next-line: param-type-mismatch
-  builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath "data", "lazy") }
+  builtin.find_files { cwd = joinpath(vim.fn.stdpath "data", "lazy") }
 end, { desc = "[F]ind Neovim [P]lugin" })
 
 vim.keymap.set("n", "<c-p>", builtin.find_files, { desc = "Ctrl-P find files" })
 
 vim.api.nvim_create_user_command("PluginsFind", function()
   ---@diagnostic disable-next-line: param-type-mismatch
-  builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath "data", "lazy") }
+  builtin.find_files { cwd = joinpath(vim.fn.stdpath "data", "lazy") }
 end, {})

@@ -58,7 +58,8 @@ vim.opt.expandtab = true
 vim.opt.swapfile = false -- do not use a swap file for the buffer
 vim.opt.backup = false -- do not keep a backup file
 
-if vim.fn.has('windows') then
+local is_windows = vim.loop.os_uname().sysname:find("Windows")
+if is_windows then
     vim.opt.undodir = os.getenv "USERPROFILE" .. "/vimfiles/undodir" -- set directory where undo files are stored
     vim.opt.shellslash = true -- always use forward slash on Windows
 else
